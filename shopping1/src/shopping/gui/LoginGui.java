@@ -32,7 +32,7 @@ public class LoginGui {
 
 		// 背景
 		JPanel panel0 = new JPanel(new FlowLayout());
-		ImageIcon icon = new ImageIcon("image/logo.png");
+		ImageIcon icon = new ImageIcon("image/IMG_16.png");
 		JLabel label = new JLabel(icon);
 		panel0.add(label);
 		inter.add(panel0, BorderLayout.NORTH);
@@ -67,7 +67,7 @@ public class LoginGui {
 		final JButton jb1 = new JButton("登录");
 		// 登录按钮触发事件
 		jb1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		public void actionPerformed(ActionEvent arg0) {
 				jb1.setText("正在登录......");
 				String userName = jt1.getText();
 				String password = new String(jt2.getPassword());
@@ -79,7 +79,7 @@ public class LoginGui {
 				} else {
 					JOptionPane.showMessageDialog(inter, "你输入的密码和账户名不匹配");
 					jt2.setText("");
-					jb1.setText("登录");
+                                        jb1.setText("登录");
 				}
 			}
 		});
