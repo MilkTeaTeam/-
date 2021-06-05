@@ -7,6 +7,7 @@ package Login_K;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
@@ -86,10 +87,10 @@ public class LoginInterface extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -133,7 +134,13 @@ public class LoginInterface extends javax.swing.JFrame {
                         Matcher m = p.matcher(phone);
                         boolean isMatch = m.matches();
                         if(isMatch){
-                       jLabel1.setText("登录成功！");                       
+                       jLabel1.setText("登录成功！");   
+                       jButton2.setText(" 正在登录。。请稍后。。");  
+                            try {                                   
+                             Thread.currentThread().sleep(1000);
+                            } catch (InterruptedException ex) {
+                                Logger.getLogger(LoginInterface.class.getName()).log(Level.SEVERE, null, ex);
+                            }                            
                        new LoginJFrame().setVisible(true);//跳转到开始界面                      
                        dispose();//关闭登录界面     
                         }
