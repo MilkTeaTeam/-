@@ -6,6 +6,8 @@
 
 package milktea_store;
 
+import Order_H.MenuGui;
+
 /**
  *
  * @author 小黄的天下
@@ -17,6 +19,7 @@ public class MilkTea_store {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        new MenuGui();
     }
     
 }
